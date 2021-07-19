@@ -1,7 +1,12 @@
 import React from "react";
+import HeaderList from "./headerList/HeaderList";
 
 const Header = () => {
-  return <h2>Header</h2>;
+  return (
+    <>
+      <HeaderList />
+    </>
+  );
 };
 
 export default Header;
