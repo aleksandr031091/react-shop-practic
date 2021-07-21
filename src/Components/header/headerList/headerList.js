@@ -1,13 +1,19 @@
 import React from "react";
 import data from "../../../data/index";
+import colors from "../../../styles/color";
+import { HeaderListStyled } from "./HeaderListStyled";
 
 const HeaderList = () => {
   return (
-    <ul>
+    <HeaderListStyled colors={colors}>
       {data.header.map((headerItem) => (
-        <li key={headerItem}>{headerItem}</li>
+        <li className="headerListItem" key={headerItem}>
+          <a className="headerListItemLink" href="./#">
+            {headerItem}
+          </a>
+        </li>
       ))}
-    </ul>
+    </HeaderListStyled>
   );
 };
 
