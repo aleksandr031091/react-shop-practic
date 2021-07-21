@@ -1,15 +1,15 @@
 import React from "react";
-import data from "../../../data/index";
+import mainRoutes from "../../../routes/mainRoutes";
 import colors from "../../../styles/color";
 import { HeaderListStyled } from "./HeaderListStyled";
 
-const HeaderList = () => {
+const HeaderList = ({ language = "en" }) => {
   return (
     <HeaderListStyled colors={colors}>
-      {data.header.map((headerItem) => (
-        <li className="headerListItem" key={headerItem}>
-          <a className="headerListItemLink" href="./#">
-            {headerItem}
+      {mainRoutes.map((item) => (
+        <li className="headerListItem" key={item.path}>
+          <a className="headerListItemLink" href={item.path}>
+            {item.name[language]}
           </a>
         </li>
       ))}
