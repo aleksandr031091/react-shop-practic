@@ -1,5 +1,5 @@
 import React from "react";
-import colors from "../../styles/color";
+import colors from "../../styles/colors";
 import { SectionStyled } from "../section/SectionStyled";
 
 const Section = ({ children, title }) => {

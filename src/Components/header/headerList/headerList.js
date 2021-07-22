@@ -1,6 +1,6 @@
 import React from "react";
 import mainRoutes from "../../../routes/mainRoutes";
-import colors from "../../../styles/color";
+import colors from "../../../styles/colors";
 import { HeaderListStyled } from "./HeaderListStyled";
 
 const HeaderList = ({ language = "en" }) => {

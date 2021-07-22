@@ -12,6 +12,8 @@ const darkColors = {
   buttonText: "#FFFFFF",
   attention: "#DC143C",
   edit: "#14dc6783",
+  shadowHover: "rgba(94, 115, 170, 0.8)",
+  shadow: "rgba(97, 97, 97, 0.8)",
 };
 const lightColors = {
   primary: "#FFFFFF",
@@ -27,6 +29,7 @@ const lightColors = {
   buttonText: "#FFFFFF",
   attention: "#DC143C",
   edit: "#1BDC14",
+  shadow: "rgba(82, 82, 82, 0.8)",
 };
 
 const colors = { darkColors, lightColors };

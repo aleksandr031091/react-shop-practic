@@ -11,7 +11,14 @@ export const ProductListItemStyled = styled.li`
     height: 100%;
     border-radius: 14px;
     padding: 20px;
-    border: 1px solid ${(props) => props.colors.darkColors.secondary};
+    border: 1px solid ${({ colors }) => colors.darkColors.secondary};
+    box-shadow: 1px 2px 10px 0px ${({ colors }) => colors.darkColors.shadow};
+    transition: 500ms;
+  }
+  .productListItemWrapper:hover {
+    box-shadow: 3px 3px 12px 0px
+      ${({ colors }) => colors.darkColors.shadowHover};
+    transform: scale(1.03);
   }
   .productListItemTitle {
     margin-bottom: 20px;
@@ -45,11 +52,11 @@ export const ProductListItemStyled = styled.li`
     width: 50%;
     height: 30px;
     border: none;
-    color: ${(props) => props.colors.darkColors.buttonText};
+    color: ${({ colors }) => colors.darkColors.buttonText};
     text-transform: uppercase;
-    background-color: ${(props) => props.colors.darkColors.main};
+    background-color: ${({ colors }) => colors.darkColors.main};
     &:hover {
-      background-color: ${(props) => props.colors.darkColors.active};
+      background-color: ${({ colors }) => colors.darkColors.active};
     }
   }
   .addToCartBtn {
