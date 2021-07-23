@@ -4,10 +4,18 @@ import ProductList from "../productList/ProductList";
 import Section from "../section/Section";
 import { MainStyled } from "./MainStyled";
 import CartList from "../cartList/CartList";
+import AdvForm from "../admin/AdvForm";
 
 class Main extends Component {
   state = {
     cart: [],
+    ...data,
+  };
+
+  addNewAdv = (product) => {
+    this.setState((prev) => ({
+      [product.category]: [...prev[product.category], product],
+    }));
   };
 
   addToCart = (product) => {
@@ -59,6 +67,9 @@ class Main extends Component {
   render() {
     return (
       <MainStyled>
+        <Section title="Администрирование">
+          <AdvForm addNewAdv={this.addNewAdv} />
+        </Section>
         <Section title="Корзина">
           <CartList
             cart={this.state.cart}
@@ -70,11 +81,17 @@ class Main extends Component {
         </Section>
 
         <Section title="Мобильные телефоны">
-          <ProductList products={data.phones} addToCart={this.addToCart} />
+          <ProductList
+            products={this.state.phones}
+            addToCart={this.addToCart}
+          />
         </Section>
 
         <Section title="Ноутбуки">
-          <ProductList products={data.laptops} addToCart={this.addToCart} />
+          <ProductList
+            products={this.state.laptops}
+            addToCart={this.addToCart}
+          />
         </Section>
       </MainStyled>
     );

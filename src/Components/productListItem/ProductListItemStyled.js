@@ -16,6 +16,7 @@ export const ProductListItemStyled = styled.li`
     transition: 500ms;
   }
   .productListItemWrapper:hover {
+    border: 1px solid ${({ colors }) => colors.darkColors.shadowHover};
     box-shadow: 3px 3px 12px 0px
       ${({ colors }) => colors.darkColors.shadowHover};
     transform: scale(1.03);
@@ -55,6 +56,7 @@ export const ProductListItemStyled = styled.li`
     color: ${({ colors }) => colors.darkColors.buttonText};
     text-transform: uppercase;
     background-color: ${({ colors }) => colors.darkColors.main};
+
     &:hover {
       background-color: ${({ colors }) => colors.darkColors.active};
     }
