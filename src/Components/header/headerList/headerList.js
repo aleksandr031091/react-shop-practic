@@ -6,13 +6,15 @@ import { HeaderListStyled } from "./HeaderListStyled";
 const HeaderList = ({ language = "en" }) => {
   return (
     <HeaderListStyled colors={colors}>
-      {mainRoutes.map((item) => (
-        <li className="headerListItem" key={item.path}>
-          <a className="headerListItemLink" href={item.path}>
-            {item.name[language]}
-          </a>
-        </li>
-      ))}
+      <ul className="navigationList">
+        {mainRoutes.map((item) => (
+          <li key={item} className="navigationListItem">
+            <a href={`${item}`} className="headerListItemLink">
+              {item.name[language]}
+            </a>
+          </li>
+        ))}
+      </ul>
     </HeaderListStyled>
   );
 };

@@ -1,30 +1,46 @@
 import styled from "styled-components";
 
-export const HeaderListStyled = styled.ul`
-  display: flex;
-  align-items: center;
-
-  .headerListItem {
-    &:hover {
-      transition: 500ms;
-      transform: scale(1.05);
-    }
+export const HeaderListStyled = styled.nav`
+  .navigationList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+    background-color: ${({ colors }) => colors.darkColors.background};
+    align-items: center;
+    padding-top: 30px;
   }
-
-  .headerListItem:not(:first-child) {
-    margin-left: 20px;
+  .navigationListItem {
+    margin-top: 10px;
   }
   .headerListItemLink {
-    font-size: 15px;
-    font-weight: 400;
-    text-transform: uppercase;
     text-decoration: none;
     color: ${({ colors }) => colors.darkColors.main};
-
-    transition: 500ms;
-
+    text-transform: uppercase;
     &:hover {
       color: ${({ colors }) => colors.darkColors.active};
     }
   }
+
+  @media (min-width: 768px) {
+    .navigationList {
+      flex-direction: row;
+      width: 100%;
+      background-color: inherit;
+      margin-top: 0;
+      padding-top: 0;
+      align-items: center;
+      justify-content;
+    }
+    .navigationListItem {
+      margin-top: 0;
+    }
+
+    .navigationListItem:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
 `;
