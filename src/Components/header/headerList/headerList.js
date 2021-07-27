@@ -8,7 +8,7 @@ const HeaderList = ({ language = "en" }) => {
     <HeaderListStyled colors={colors}>
       <ul className="navigationList">
         {mainRoutes.map((item) => (
-          <li key={item} className="navigationListItem">
+          <li key={item.name[language]} className="navigationListItem">
             <a href={`${item}`} className="headerListItemLink">
               {item.name[language]}
             </a>

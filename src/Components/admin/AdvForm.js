@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { createNewAdv } from "../../services/Api";
 import { AdvFormStyled } from "./AdvFormStyled";
 import colors from "../../styles/colors";
 
@@ -26,10 +26,11 @@ class AdvForm extends Component {
     this.setState({ [name]: value });
   };
 
-  onHandleSubmit = (e) => {
+  onHandleSubmit = async (e) => {
     e.preventDefault();
 
-    this.props.addNewAdv({ ...this.state, id: uuidv4() });
+    const response = await createNewAdv(this.state);
+    this.props.addNewAdv({ ...this.state, id: response.data.name });
     this.setState({ ...initialState });
   };
 
