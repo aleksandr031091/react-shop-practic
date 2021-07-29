@@ -1,3 +1,9 @@
+import AdminPage from "../pages/AdminPage";
+import AuthPage from "../pages/AuthPage";
+import CartPage from "../pages/CartPage";
+import HomePage from "../pages/HomePage";
+import Productspage from "../pages/Productspage";
+
 const mainRoutes = [
   {
     name: {
@@ -6,7 +12,8 @@ const mainRoutes = [
       ua: "Головна",
     },
     path: "/",
-    icon: "",
+    component: HomePage,
+    exact: true,
   },
   {
     name: {
@@ -15,7 +22,8 @@ const mainRoutes = [
       ua: "Продукты",
     },
     path: "/products",
-    icon: "",
+    component: Productspage,
+    exact: false,
   },
   {
     name: {
@@ -24,7 +32,8 @@ const mainRoutes = [
       ua: "кошик",
     },
     path: "/cart",
-    icon: "",
+    component: CartPage,
+    exact: true,
   },
   {
     name: {
@@ -32,8 +41,9 @@ const mainRoutes = [
       ru: "администрирования",
       ua: "администрування",
     },
-    path: "/administration",
-    icon: "",
+    path: "/admin",
+    component: AdminPage,
+    exact: true,
   },
   {
     name: {
@@ -41,8 +51,9 @@ const mainRoutes = [
       ru: "регистрация",
       ua: "регистрация",
     },
-    path: "/Registration",
-    icon: "",
+    path: "/registration",
+    component: AuthPage,
+    exact: true,
   },
   {
     name: {
@@ -51,7 +62,8 @@ const mainRoutes = [
       ua: "Увийти",
     },
     path: "/login",
-    icon: "",
+    component: AuthPage,
+    exact: true,
   },
 ];
 export default mainRoutes;

@@ -23,7 +23,9 @@ export const HeaderListStyled = styled.nav`
       color: ${({ colors }) => colors.darkColors.active};
     }
   }
-
+.activeHeaderListItemLink{
+  color: ${({ colors }) => colors.darkColors.active};
+}
   @media (min-width: 768px) {
     .navigationList {
       flex-direction: row;

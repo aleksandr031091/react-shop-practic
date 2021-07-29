@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import data from "../../data";
-import ProductList from "../productList/ProductList";
-import Section from "../section/Section";
 import { MainStyled } from "./MainStyled";
-import CartList from "../cartList/CartList";
-import AdvForm from "../admin/AdvForm";
 import { getAllAdvByCategory } from "../../services/Api";
+import { Switch, Route } from "react-router-dom";
+import mainRoutes from "../../routes/mainRoutes";
 
 const getDataByCategory = async (category) => {
   const res = await getAllAdvByCategory(category);
@@ -91,32 +88,11 @@ class Main extends Component {
   render() {
     return (
       <MainStyled>
-        <Section title="Администрирование">
-          <AdvForm addNewAdv={this.addNewAdv} />
-        </Section>
-        <Section title="Корзина">
-          <CartList
-            cart={this.state.cart}
-            addItem={this.addItem}
-            removeItem={this.removeItem}
-            removeFromCart={this.removeFromCart}
-            removeAllFromCart={this.removeAllFromCart}
-          />
-        </Section>
-
-        <Section title="Мобильные телефоны">
-          <ProductList
-            products={this.state.products.phones}
-            addToCart={this.addToCart}
-          />
-        </Section>
-
-        <Section title="Ноутбуки">
-          <ProductList
-            products={this.state.products.laptops}
-            addToCart={this.addToCart}
-          />
-        </Section>
+        <Switch>
+          {mainRoutes.map(({ path, component, exact }) => (
+            <Route path={path} component={component} exact={exact} key={path} />
+          ))}
+        </Switch>
       </MainStyled>
     );
   }
