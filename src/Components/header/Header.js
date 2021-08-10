@@ -1,33 +1,27 @@
 import React, { Component } from "react";
+import colors from "../../styles/colors";
 import HeaderList from "./headerList/HeaderList";
 import { HeaderStyled } from "./HeaderStyled";
-import colors from "../../styles/colors";
-import sprite from "../../icons/header-sprite.svg";
-import Modal from "../modal/Modal";
+import sprite from "../../icons/sprite.svg";
+import Modal from "../Modal/Modal";
 
 class Header extends Component {
-  state = {
-    width: window.innerWidth,
-    breakPoint: 768,
-    isModalOpen: false,
-  };
+  state = { width: window.innerWidth, breakPoint: 768, isModalOpen: false };
 
-  componentDidMount = () => {
+  componentDidMount() {
     window.addEventListener("resize", this.handleResizeWindow);
-  };
-
-  componentWillUnmount = () => {
+  }
+  componentWillUnmount() {
     window.removeEventListener("resize", this.handleResizeWindow);
+  }
+  handleResizeWindow = () => {
+    this.setState({ width: window.innerWidth });
   };
-
-  handleResizeWindow = () => this.setState({ width: window.innerWidth });
-
   setOpenModal = () => {
     this.setState((prev) => ({
       isModalOpen: !prev.isModalOpen,
     }));
   };
-
   render() {
     const { width, breakPoint, isModalOpen } = this.state;
     return (

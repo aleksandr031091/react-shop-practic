@@ -1,8 +1,9 @@
+// import AdvForm from "../Components/admin/AdvForm";
 import Section from "../Components/section/Section";
-import AdvForm from "../Components/admin/AdvForm";
+
 const AdminPage = () => {
   return (
-    <Section title="Администрирование">
+    <Section title="AdminPage">
       {/* <AdvForm addNewAdv={this.addNewAdv} /> */}
     </Section>
   );

@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { ModalContainer } from "./ModalStyled";
-import colors from "../../styles/colors";
 
 class Modal extends Component {
   state = {};
-
   componentDidMount() {
     window.addEventListener("keydown", this.handleEsc);
     const body = document.querySelector("body");
@@ -17,20 +15,14 @@ class Modal extends Component {
     body.style.overflow = "auto";
   }
 
-  handleBackdropClick = (e) => {
-    if (e.target !== e.currentTarget) {
-      return;
-    }
-    this.props.handleCloseModal();
-  };
-
   handleEsc = (e) => e.code === "Escape" && this.props.handleCloseModal();
 
-  handleClick = () => this.props.handleCloseModal();
+  handleClick = (e) =>
+    e.target === e.currentTarget && this.props.handleCloseModal();
 
   render() {
     return (
-      <ModalContainer onClick={this.handleBackdropClick} colors={colors}>
+      <ModalContainer onClick={this.handleClick}>
         <div className="modal">{this.props.children}</div>
       </ModalContainer>
     );

@@ -1,48 +1,47 @@
 import styled from "styled-components";
 
-export const HeaderListStyled = styled.nav`
-  .navigationList {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: calc(100vh - 60px);
-    margin-top: 60px;
-    background-color: ${({ colors }) => colors.darkColors.background};
-    align-items: center;
-    padding-top: 30px;
-  }
-  .navigationListItem {
-    margin-top: 10px;
-  }
-  .headerListItemLink {
-    text-decoration: none;
-    color: ${({ colors }) => colors.darkColors.main};
-    text-transform: uppercase;
-    &:hover {
-      color: ${({ colors }) => colors.darkColors.active};
-    }
-  }
-.activeHeaderListItemLink{
-  color: ${({ colors }) => colors.darkColors.active};
-}
+export const HeaderListStyled = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  height: calc(95vh - 60px);
+  margin-top: 60px;
+  background-color: #424242;
+  align-items: center;
+  padding-top: 30px;
   @media (min-width: 768px) {
-    .navigationList {
-      flex-direction: row;
-      width: 100%;
-      background-color: inherit;
-      margin-top: 0;
-      padding-top: 0;
-      align-items: center;
-      justify-content;
-    }
-    .navigationListItem {
+    flex-direction: row;
+    width: 100%;
+    background-color: inherit;
+
+    margin: 0;
+    padding-top: 0;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .headerListItem {
+    margin-top: 10px;
+    @media (min-width: 768px) {
       margin-top: 0;
     }
 
-    .navigationListItem:not(:last-child) {
-      margin-right: 20px;
+    &:not(:last-child) {
+      margin-right: 10px;
+      @media (min-width: 768px) {
+        margin-right: 20px;
+      }
     }
   }
 
+  .headerListLink {
+    color: ${(props) => props.colors.darkColors.main};
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .activeHeaderListLink {
+    color: ${(props) => props.colors.darkColors.active};
+  }
 `;

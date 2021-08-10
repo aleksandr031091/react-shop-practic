@@ -1,15 +1,41 @@
-import React from "react";
-import ProductListItem from "../productListItem/ProductListItem";
-import { ProductListStyle } from "./ProductListStyled";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { setFilter } from "../../redux/products/productsAction";
+import { getAllAdvByCategoryOperation } from "../../redux/products/productsOperations";
+import { productsItemsSelector } from "../../redux/products/productsSelectors";
+import Filter from "../filter/Filter";
+import ProductListItem from "./productListItem/ProductListItem";
+import { ProductListStyled } from "./ProductListStyled";
 
-const ProductList = ({ products = [], addToCart }) => {
-  return (
-    <ProductListStyle>
-      {products.map((product) => (
-        <ProductListItem {...product} key={product.id} addToCart={addToCart} />
-      ))}
-    </ProductListStyle>
-  );
-};
+class ProductList extends Component {
+  async componentDidMount() {
+    await this.props.getAllAdvByCategoryOperation(this.props.category);
+    this.props.setFilter("");
+  }
 
-export default ProductList;
+  render() {
+    return (
+      <>
+        <Filter />
+        <ProductListStyled>
+          {this.props.products.map((product) => (
+            <ProductListItem
+              product={product}
+              key={product.id}
+              addToCart={this.props.addToCart}
+            />
+          ))}
+        </ProductListStyled>
+      </>
+    );
+  }
+}
+const mapStateToProps = (state, props) => ({
+  category: props.location.state.category,
+  products: productsItemsSelector(state, props.location.state.category),
+});
+
+export default connect(mapStateToProps, {
+  getAllAdvByCategoryOperation,
+  setFilter,
+})(ProductList);

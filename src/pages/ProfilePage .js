@@ -1,12 +1,12 @@
 import Section from "../Components/section/Section";
 
-const HomePage = () => {
+const ProfilePage = () => {
   return (
     <>
-      <Section title={"HomePage"}>
+      <Section title={"ProfilePage"}>
       </Section>
     </>
   );
 };
 
-export default HomePage;
+export default ProfilePage ;

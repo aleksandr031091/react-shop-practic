@@ -1,20 +1,22 @@
+import { NavLink, Route, Switch } from "react-router-dom";
 import { productsRoutes } from "../routes/productsRoutes";
-import { NavLink, Switch, Route } from "react-router-dom";
-import { ProductPageContainer } from "./ProductPageStyled";
-import colors from "../styles/colors";
+import { ProductPageStyled } from "./ProductsPageStyled";
 
-const Productspage = ({ match }) => {
+const ProductsPage = ({ match }) => {
   return (
-    <ProductPageContainer colors={colors}>
+    <ProductPageStyled>
       <nav>
         <ul className="navigationList">
           {productsRoutes.map((route) => (
             <li className="navigationListItem" key={route.path}>
               <NavLink
-                to={match.url + route.path}
+                className="navigationListItemAnchor"
+                activeClassName="activeNavigationListItemAnchor"
+                to={{
+                  pathname: match.url + route.path,
+                  state: { category: route.category },
+                }}
                 exact={route.exact}
-                className="headerListItemLink"
-                activeClassName="activeHeaderListItemLink"
               >
                 {route.name}
               </NavLink>
@@ -25,15 +27,15 @@ const Productspage = ({ match }) => {
       <Switch>
         {productsRoutes.map((route) => (
           <Route
-            to={match.path + route.path}
+            path={match.path + route.path}
             exact={route.exact}
             component={route.component}
             key={route.path}
           />
         ))}
       </Switch>
-    </ProductPageContainer>
+    </ProductPageStyled>
   );
 };
 
-export default Productspage;
+export default ProductsPage;

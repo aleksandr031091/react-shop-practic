@@ -2,68 +2,46 @@ import AdminPage from "../pages/AdminPage";
 import AuthPage from "../pages/AuthPage";
 import CartPage from "../pages/CartPage";
 import HomePage from "../pages/HomePage";
-import Productspage from "../pages/Productspage";
+import ProductsPage from "../pages/ProductsPage";
 
-const mainRoutes = [
+export const mainRoutes = [
   {
-    name: {
-      en: "Home",
-      ru: "Главная",
-      ua: "Головна",
-    },
+    name: { en: "Home", ua: "Головна", ru: "Главная" },
     path: "/",
+    icon: "",
     component: HomePage,
     exact: true,
   },
   {
-    name: {
-      en: "Products",
-      ru: "Продукти",
-      ua: "Продукты",
-    },
+    name: { en: "Products", ua: "Продукти", ru: "Продукты" },
     path: "/products",
-    component: Productspage,
+    icon: "",
+    component: ProductsPage,
     exact: false,
   },
   {
-    name: {
-      en: "Cart",
-      ru: "корзина",
-      ua: "кошик",
-    },
+    name: { en: "Cart", ua: "Кошик", ru: "Корзина" },
     path: "/cart",
+    icon: "",
     component: CartPage,
     exact: true,
   },
   {
     name: {
       en: "Administration",
-      ru: "администрирования",
-      ua: "администрування",
+      ua: "Адмiнiстрування",
+      ru: "Администрирование",
     },
     path: "/admin",
+    icon: "",
     component: AdminPage,
     exact: true,
   },
   {
-    name: {
-      en: "Registration",
-      ru: "регистрация",
-      ua: "регистрация",
-    },
-    path: "/registration",
-    component: AuthPage,
-    exact: true,
-  },
-  {
-    name: {
-      en: "Login",
-      ru: "Войти",
-      ua: "Увийти",
-    },
-    path: "/login",
+    name: { en: "Registration", ua: "Реєстрація", ru: "Регистрация" },
+    path: "/register",
+    icon: "",
     component: AuthPage,
     exact: true,
   },
 ];
-export default mainRoutes;

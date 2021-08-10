@@ -1,22 +1,23 @@
 import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
+  height: 60px;
+  border-bottom: 3px solid ${(props) => props.colors.darkColors.main};
+  background-color: ${(props) => props.colors.darkColors.background};
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
-  height: 60px;
-  border-bottom: 3px solid ${({ colors }) => colors.darkColors.main};
-  background-color: ${({ colors }) => colors.darkColors.background};
+  padding: 0 20px;
 
   .headerLogo {
     font-weight: 700;
-    font-size: 25px;
-    color: ${({ colors }) => colors.darkColors.main};
+    font-size: 20px;
+    color: ${(props) => props.colors.darkColors.main};
     text-transform: uppercase;
   }
   .burgerMenu {
+    fill: ${(props) => props.colors.darkColors.main};
     width: 40px;
-    fill: ${({ colors }) => colors.darkColors.main};
+    height: 40px;
   }
 `;

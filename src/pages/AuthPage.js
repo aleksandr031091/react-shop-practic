@@ -1,8 +1,12 @@
+import Section from "../Components/section/Section";
+
 const AuthPage = () => {
-  return <h2>AuthPage</h2>;
-  //  <Section title="Администрирование">
-  //    {/* <AdvForm addNewAdv={this.addNewAdv} /> */}
-  //  </Section>;
+  return (
+    <>
+      <Section title={"AuthPage"}>
+      </Section>
+    </>
+  );
 };
 
 export default AuthPage;

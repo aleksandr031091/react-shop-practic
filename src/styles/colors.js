@@ -1,4 +1,4 @@
-const darkColors = {
+export const darkColors = {
   primary: "#424242",
   secondary: "#3D3D3D",
   background: "#212121",
@@ -12,10 +12,8 @@ const darkColors = {
   buttonText: "#FFFFFF",
   attention: "#DC143C",
   edit: "#14dc6783",
-  shadowHover: "rgba(94, 115, 170, 0.8)",
-  shadow: "rgba(97, 97, 97, 0.8)",
 };
-const lightColors = {
+export const lightColors = {
   primary: "#FFFFFF",
   secondary: "#DBD7D8",
   background: "#FFFFFF",
@@ -29,9 +27,7 @@ const lightColors = {
   buttonText: "#FFFFFF",
   attention: "#DC143C",
   edit: "#1BDC14",
-  shadow: "rgba(82, 82, 82, 0.8)",
 };
 
 const colors = { darkColors, lightColors };
-
 export default colors;

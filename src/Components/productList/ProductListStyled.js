@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const ProductListStyle = styled.ul`
+export const ProductListStyled = styled.ul`
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
+  
 `;
