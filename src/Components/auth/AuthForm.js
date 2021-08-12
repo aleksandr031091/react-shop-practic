@@ -21,10 +21,9 @@ class AuthForm extends Component {
 
   onHandleSubmit = (e) => {
     e.preventDefault();
-    if (this.props.location.pathname === "register") {
+    if (this.props.location.pathname === "/register") {
       this.props.registrOperation(this.state);
-    }
-    this.props.loginOperation(this.state);
+    } else this.props.loginOperation(this.state);
   };
 
   render() {
