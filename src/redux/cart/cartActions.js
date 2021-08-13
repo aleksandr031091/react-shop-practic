@@ -6,3 +6,4 @@ export const createOrder = createAction("cart/createOrder");
 export const setError = createAction("cart/setError");
 export const setLoader = createAction("cart/setLoader");
 export const resetError = createAction("cart/resetError");
+export const removeAllFromCart = createAction("cart/removeAllFromCart");

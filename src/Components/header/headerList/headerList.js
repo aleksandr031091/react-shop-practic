@@ -1,5 +1,5 @@
 import React from "react";
-import { connect } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 
 import { logOut } from "../../../redux/auth/authActions";
 import { mainRoutes } from "../../../routes/mainRoutes";
@@ -7,9 +7,12 @@ import colors from "../../../styles/colors";
 import { HeaderListStyled } from "./HeaderListStyled";
 import HeaderListItem from "../HeaderListItem/HeaderListItem";
 
-const HeaderList = ({ language = "en", logOut, isAuth }) => {
+const HeaderList = ({ language = "en" }) => {
+  const dispatch = useDispatch();
+  const isAuth = useSelector((state) => state.auth.idToken);
+
   const exet = () => {
-    logOut();
+    dispatch(logOut());
   };
   return (
     <HeaderListStyled colors={colors}>
@@ -27,10 +30,4 @@ const HeaderList = ({ language = "en", logOut, isAuth }) => {
   );
 };
 
-const mstp = (state) => {
-  return {
-    isAuth: state.auth.idToken,
-  };
-};
-
-export default connect(mstp, { logOut })(HeaderList);
+export default HeaderList;

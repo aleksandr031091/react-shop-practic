@@ -1,12 +1,14 @@
 import React from "react";
 import { MainStyled } from "./MainStyled";
-import { Route, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import { mainRoutes } from "../../routes/mainRoutes";
 import PrivatRoute from "../../routes/privatRoute";
 import PublicRoute from "../../routes/publicRoute";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
-const Main = ({ isAuth }) => {
+const Main = () => {
+  const isAuth = useSelector((state) => state.auth.idToken);
+
   return (
     <MainStyled>
       <Switch>
@@ -22,9 +24,4 @@ const Main = ({ isAuth }) => {
   );
 };
 
-const mstp = (state) => {
-  return {
-    isAuth: state.auth.idToken,
-  };
-};
-export default connect(mstp)(Main);
+export default Main;

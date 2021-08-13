@@ -2,18 +2,19 @@ import { combineReducers, createReducer } from "@reduxjs/toolkit";
 import {
   addToCart,
   createOrder,
+  removeAllFromCart,
   removeFromCart,
   resetError,
   setError,
   setLoader,
 } from "./cartActions";
 
-
 const cartItemsReducer = createReducer([], {
   [addToCart]: (state, { payload }) => [...state, payload],
   [removeFromCart]: (state, { payload }) =>
     state.filter(({ id }) => id !== payload),
   [createOrder]: () => [],
+  [removeAllFromCart]: () => [],
 });
 
 const cartLoaderReducer = createReducer(false, {
