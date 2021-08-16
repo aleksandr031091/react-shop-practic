@@ -4,6 +4,7 @@ import HeaderList from "./headerList/HeaderList";
 import { HeaderStyled } from "./HeaderStyled";
 import sprite from "../../icons/sprite.svg";
 import Modal from "../Modal/Modal";
+import LenguagesSwitcher from "../languagesSwitcher/lenguagesSwitcher";
 
 const initialState = {
   width: window.innerWidth,
@@ -29,6 +30,7 @@ const Header = () => {
   return (
     <>
       <HeaderStyled colors={colors}>
+        <LenguagesSwitcher />
         <h2 className="headerLogo">Logo</h2>
         {state.width > state.breakPoint ? (
           <nav>
