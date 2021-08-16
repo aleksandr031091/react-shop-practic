@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import {
@@ -21,9 +21,10 @@ const AuthForm = () => {
   const onHandleSubmit = (e) => {
     e.preventDefault();
     if (location.pathname === "/register") {
-      dispatch(registrOperation(this.state));
-    } else dispatch(loginOperation(this.state));
+      dispatch(registrOperation(state));
+    } else dispatch(loginOperation(state));
   };
+
   return (
     <form onSubmit={onHandleSubmit}>
       <label>
