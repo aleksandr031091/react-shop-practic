@@ -6,7 +6,7 @@ import {
   registrOperation,
 } from "../../redux/auth/authOperations";
 
-const initialState = { emai: "", password: "" };
+const initialState = { email: "", password: "" };
 
 const AuthForm = () => {
   const [state, setState] = useState(initialState);

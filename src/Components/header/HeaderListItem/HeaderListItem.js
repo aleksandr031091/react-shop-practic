@@ -7,11 +7,11 @@ const HeaderListItem = ({
   language,
   isAuth,
   isPrivat,
-  isResticted,
+  isRestricted,
 }) => {
   return (
     <>
-      {!isPrivat && !isResticted && (
+      {!isPrivat && !isRestricted && (
         <li className="headerListItem">
           <NavLink
             to={path}
@@ -23,7 +23,7 @@ const HeaderListItem = ({
           </NavLink>
         </li>
       )}
-      {isAuth && isPrivat && !isResticted && (
+      {isAuth && isPrivat && !isRestricted && (
         <li className="headerListItem">
           <NavLink
             to={path}
@@ -35,7 +35,7 @@ const HeaderListItem = ({
           </NavLink>
         </li>
       )}
-      {!isAuth && !isPrivat && isResticted && (
+      {!isAuth && !isPrivat && isRestricted && (
         <li className="headerListItem">
           <NavLink
             to={path}

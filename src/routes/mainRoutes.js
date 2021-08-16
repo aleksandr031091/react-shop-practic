@@ -6,7 +6,7 @@ import ProductsPage from "../pages/ProductsPage";
 
 export const mainRoutes = [
   {
-    name: { en: "Home", ua: "Головна", ru: "Главная" },
+    name: "Home",
     path: "/",
     icon: "",
     component: HomePage,
@@ -15,7 +15,7 @@ export const mainRoutes = [
     isRestricted: false,
   },
   {
-    name: { en: "Products", ua: "Продукти", ru: "Продукты" },
+    name: "Products",
     path: "/products",
     icon: "",
     component: ProductsPage,
@@ -24,7 +24,7 @@ export const mainRoutes = [
     isRestricted: false,
   },
   {
-    name: { en: "Cart", ua: "Кошик", ru: "Корзина" },
+    name: "Cart",
     path: "/cart",
     icon: "",
     component: CartPage,
@@ -33,11 +33,7 @@ export const mainRoutes = [
     isRestricted: false,
   },
   {
-    name: {
-      en: "Administration",
-      ua: "Адмiнiстрування",
-      ru: "Администрирование",
-    },
+    name: "Administration",
     path: "/admin",
     icon: "",
     component: AdminPage,
@@ -46,7 +42,7 @@ export const mainRoutes = [
     isRestricted: false,
   },
   {
-    name: { en: "Registration", ua: "Реєстрація", ru: "Регистрация" },
+    name: "Registration",
     path: "/register",
     icon: "",
     component: AuthPage,
@@ -55,7 +51,7 @@ export const mainRoutes = [
     isRestricted: true,
   },
   {
-    name: { en: "login", ua: "Реєстрація", ru: "Регистрация" },
+    name: "login",
     path: "/login",
     icon: "",
     component: AuthPage,

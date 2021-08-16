@@ -1,4 +1,4 @@
-import React, { useState, Component } from "react";
+import React, { useState } from "react";
 import { createNewAdv } from "../../services/Api";
 import { AdvFormStyled } from "./AdvFormStyled";
 
@@ -26,9 +26,8 @@ const AdvForm = () => {
 
   const onHandleSubmit = async (e) => {
     e.preventDefault();
-    const response = await createNewAdv(state);
-    this.props.addNewAdv({ ...state, id: response.data.name });
-    this.setState({ ...initialState });
+    await createNewAdv(state);
+    setState({ ...initialState });
   };
   return (
     <AdvFormStyled onSubmit={onHandleSubmit} className="formAdv">
@@ -84,7 +83,7 @@ const AdvForm = () => {
           value={state.category}
           onChange={onHandleChange}
         >
-          {state.categories.map((category) => (
+          {categories.map((category) => (
             <option value={category} key={category}>
               {category}
             </option>
